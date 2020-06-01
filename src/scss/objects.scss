@@ -1,0 +1,39 @@
+.button {
+	  position: relative;
+	  color: $article-color;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	  background: $accent-1-color;
+	  text-align: center;
+		cursor: pointer;
+}
+
+h1 {
+	color: $h1-color;
+}
+
+h2 {
+	color: $h2-color;
+}
+
+h3 {
+	color: $h3-color;
+}
+
+p {
+	color: $article-color;
+}
+
+ul {
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+
+html {
+		overflow-x: hidden;
+		width: 100vw;
+}

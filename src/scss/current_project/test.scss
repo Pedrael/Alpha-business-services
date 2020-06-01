@@ -1,0 +1,111 @@
+$roboto: 'Roboto', sans-serif;
+$neosans: "Neo Sans Pro", sans-serif;
+
+html, body {
+	    font-family: $roboto;
+			overflow-x: hidden;
+			width: 100vw;
+      background: $black;
+
+			a {
+				text-decoration: none;
+        cursor: pointer;
+			}
+
+			ul {
+				margin: 0;
+			}
+
+			li {
+				list-style: none;
+			}
+      h2, h3, h4 {
+        font-family: $neosans;
+        font-weight: 500;
+      }
+      p, h2, h3, h4  {
+        color: $black;
+      }
+      p {
+        @include FontLineSize(0.1, 0.1, 0.8, 14, 10);
+        letter-spacing: 1px;
+      }
+      h2 {
+        //font-size: 48px;
+        text-transform: uppercase;
+        @include FontLineSize(0.2, 0.2, 0.6, 48, 8);
+      }
+      h3 {
+        //font-size: 18px;
+        @include FontLineSize(0.2, 0.2, 0.6, 18, 8);
+        color: #c1c1c1;
+        margin-bottom: 20px;
+      }
+}
+.button {
+  height: 50px;
+  width: 185px;
+  border-radius: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+  background: $green;
+  color: $black;
+  font-size: 12px;
+}
+.submit-message {
+	position: fixed;
+	right: 0;
+	top: 0;
+	padding: 20px 30px;
+	@include FontLineSize(0.2, 0.2, 0.6, 18, 8);
+	font-weight: 600;
+	font-family: $roboto;
+	background: $blue;
+	color: $black;
+	z-index: 9999999;
+	border-radius: 0 0 0 30px;
+	transition: 0;
+}
+
+.container {
+  padding-top: 30vh;
+  padding-bottom: 50vh;
+	height: 350vh;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+	height: 100px;
+  padding: 10px 36px;
+  margin: 10px 0;
+  color: $black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: $green;
+  width: 15vw;
+  text-align: center;
+}
+
+.test {
+	position: absolute;
+	top: 900px;
+	height: 600px;
+	width: 600px;
+	background-color: black;
+}
+
+.test2 {
+	width: 150px;
+	height: 100px;
+	p {
+		color: white;
+		text-align: center;
+	}
+}

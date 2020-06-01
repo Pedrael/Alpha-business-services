@@ -1,0 +1,390 @@
+
+//-vision
+
+.-hide-phone-small {
+	@include _phone-small {
+		display: none;
+	}
+}
+
+.-hide-phone-big {
+	@include _phone-big {
+		display: none;
+	}
+}
+
+.-hide-tablet-small {
+	@include _tablet-small {
+		display: none;
+	}
+}
+
+.-hide-tablet-middle {
+	@include _tablet-middle {
+		display: none;
+	}
+}
+
+.-hide-tablet-big {
+	@include _tablet-big {
+		display: none;
+	}
+}
+
+.-hide-desktop-small {
+	@include _desktop-small {
+		display: none;
+	}
+}
+
+.-hide {
+	display: none;
+}
+
+
+.-show-phone-small {
+	@include _phone-small {
+		display: flex;
+	}
+}
+
+.-show-phone-big {
+	@include _phone-big {
+		display: flex;
+	}
+}
+
+.-show-tablet-small {
+	@include _tablet-small {
+		display: flex;
+	}
+}
+
+.-show-tablet-middle {
+	@include _tablet-middle {
+		display: flex;
+	}
+}
+
+.-show-tablet-big {
+	@include _tablet-big {
+		display: flex;
+	}
+}
+
+.-show-desktop-small {
+	@include _desktop-small {
+		display: flex;
+	}
+}
+
+.-show {
+	display: flex;
+}
+
+.-invisible-phone-small {
+	@include _phone-small {
+		visibility: hidden;
+	}
+}
+
+.-invisible-phone-big {
+	@include _phone-big {
+		visibility: hidden;
+	}
+}
+
+.-invisible-tablet-small {
+	@include _tablet-small {
+		visibility: hidden;
+	}
+}
+
+.-invisible-tablet-middle {
+	@include _tablet-middle {
+		visibility: hidden;
+	}
+}
+
+.-invisible-tablet-big {
+	@include _tablet-big {
+		visibility: hidden;
+	}
+}
+
+.-invisible-desktop-small {
+	@include _desktop-small {
+		visibility: hidden;
+	}
+}
+
+.-invisible {
+	visibility: hidden;
+}
+
+.-visible-phone-small {
+	@include _phone-small {
+		visibility: visible;
+	}
+}
+
+.-visible-phone-big {
+	@include _phone-big {
+		visibility: visible;
+	}
+}
+
+.-visible-tablet-small {
+	@include _tablet-small {
+		visibility: visible;
+	}
+}
+
+.-visible-tablet-middle {
+	@include _tablet-middle {
+		visibility: visible;
+	}
+}
+
+.-visible-tablet-big {
+	@include _tablet-big {
+		visibility: visible;
+	}
+}
+
+.-visible-desktop-small {
+	@include _desktop-small {
+		visibility: visible;
+	}
+}
+
+.-visible {
+	visibility: visible;
+}
+
+
+//-flex
+
+.flex {
+	display: flex;
+}
+
+.-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.-column-inverse {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.-row-inverse {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.-wrap {
+ 	flex-wrap: wrap;
+}
+
+.-nowrap {
+ 	flex-wrap: nowrap;
+}
+
+.-jc-s {
+	justify-content: flex-start;
+}
+
+.-jc-c {
+	justify-content: center;
+}
+
+.-jc-sb {
+	justify-content: space-between;
+}
+
+.-jc-sa {
+	justify-content: space-around;
+}
+
+.-jc-e {
+	justify-content: flex-end;
+}
+
+.-ai-s {
+	align-items: flex-start;
+}
+
+.-ai-stretch {
+	align-items: stretch;
+}
+
+.-ai-c {
+	align-items: center;
+}
+
+.-ai-e {
+	align-items: flex-end;
+}
+
+.-as-s {
+	align-self: flex-start;
+}
+
+.-as-stretch {
+	align-self: stretch;
+}
+
+.-as-c {
+	align-self: center;
+}
+
+.-as-e {
+	align-self: flex-end;
+}
+
+.-ac-s {
+	align-content: flex-start;
+}
+
+.-ac-c {
+	align-content: center;
+}
+
+.-ac-sb {
+	align-content: space-between;
+}
+
+.-ac-stretch {
+	align-content: stretch;
+}
+
+.-ac-sa {
+	align-content: space-around;
+}
+
+.-ac-e {
+	align-content: flex-end;
+}
+
+@for $i from 1 to 10 {
+	.f-grow-#{$i} {
+		flex-grow: #{$i};
+	}
+}
+
+@for $i from 1 to 10 {
+	.f-shrink-#{$i} {
+		flex-shrink: #{$i};
+	}
+}
+
+//-width
+
+.mw-fit-content {
+	min-width: fit-content;
+}
+
+@for $i from 1 to 100 {
+	.w-#{$i} {
+		width: #{$i} * 1%;
+	}
+}
+
+//-text
+
+.-text-r {
+	text-align: center;
+}
+
+.-text-l {
+	text-align: center;
+}
+
+.-text-c {
+	text-align: center;
+}
+
+.-text-j {
+	text-align: center;
+}
+
+.-upper {
+	text-transform: uppercase;
+}
+
+.-lower {
+	text-transform: lowercase;
+}
+
+//-positions
+.pos-r {
+	position: relative;
+}
+
+.pos-a {
+	position: absolute;
+}
+
+.pos-f {
+	position: fixed;
+}
+
+.pos-s {
+	position: sticky;
+	position: -webkit-sticky; /* Safari */
+}
+
+//-sides align
+
+.-bot {
+	bottom: 0;
+}
+
+.-top {
+	top: 0;
+}
+
+.-left {
+	left: 0;
+}
+
+.-right {
+	right: 0;
+}
+
+@for $i from 1 to 50 {
+	.bot-#{$i} {
+		bottom: #{$i} * 1%;
+	}
+}
+
+@for $i from 1 to 50 {
+	.top-#{$i} {
+		top: #{$i} * 1%;
+	}
+}
+
+@for $i from 1 to 50 {
+	.left-#{$i} {
+		left: #{$i} * 1%;
+	}
+}
+
+@for $i from 1 to 50 {
+	.right-#{$i} {
+		right: #{$i} * 1%;
+	}
+}

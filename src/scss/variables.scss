@@ -1,0 +1,36 @@
+
+//devices
+
+$devices: (
+
+	//galaxy note 3 (360 x 640)
+	"phone-small-horizontal": 360,
+	"phone-small-vertical": 640,
+
+	//iphone XR (414 x 896)
+	"phone-big-horizontal": 414,
+	"phone-big-vertical": 896,
+
+	//nexus 7 (600 x 960)
+	"tablet-small-horizontal": 600,
+	"tablet-small-vertical": 960,
+
+	//ipad 768 x 1024
+	"tablet-middle-horizontal": 768,
+	"tablet-middle-vertical": 1024,
+
+	//ipad 1024 x 768
+	"tablet-big-horizontal": 1024,
+	"tablet-big-vertical": 768,
+
+	//1366 x 900
+	"desktop-small-horizontal": 1366,
+	"desktop-small-vertical": 900,
+
+	//1920 x 1080
+	"desktop-middle-horizontal": 1920,
+	"desktop-middle-vertical": 1080,
+);
+
+//-variables
+$font_size-global: 14;

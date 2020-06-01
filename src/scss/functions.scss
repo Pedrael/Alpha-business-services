@@ -1,0 +1,131 @@
+//-calculates
+
+@function RelativeUnits($object, $scaler, $mode: desktop-middle, $orientation: horizontal) {
+
+	@if ($orientation == vertical) {
+		@return calc(#{$scaler * $object/GetDeviceScreen($mode, $orientation)} * 100vh + #{(1 - $scaler) * $object * 1px});
+	}
+	@else if ($orientation == horizontal) {
+		@return calc(#{$scaler * $object/GetDeviceScreen($mode, $orientation)} * 100vw + #{(1 - $scaler) * $object * 1px});
+	}
+}
+
+@function RelativeUnitsComplex($object, $scaler, $vertical-scaler, $mode: desktop-middle) {
+	@return calc(#{$scaler * (1 - $vertical-scaler) * $object/GetDeviceScreen($mode, horizontal)} * 100vw + #{$scaler * $vertical-scaler * $object/GetDeviceScreen($mode, vertical)} * 100vh + #{(1 - ($scaler + $vertical-scaler)) * $object * 1px});
+}
+
+@function BracketFunction($string) {
+  @return '"#{$string}"';
+}
+
+@function CheckInt($number) {
+	@if ($number - floor($number)) == 0 {
+		@return true;
+	}
+	@else {
+		@return false;
+	}
+}
+
+@function GCF($list) {
+
+	$gcf: 1;
+	$gcf-maybe: 1;
+
+	@while $gcf-maybe <= LIST_GetMin($list) {
+
+		$rest: 0;
+		@for $indexer from 1 through length($list) {
+			$rest: $rest + (nth($list, $indexer)/$gcf-maybe - floor(nth($list, $indexer)/$gcf-maybe));
+		}
+		@if $rest == 0 {
+			$gcf: $gcf-maybe;
+		}
+		$gcf-maybe: $gcf-maybe + 1;
+	}
+
+	@return $gcf;
+}
+
+//-Gets
+
+@function GetDeviceScreen($mode, $orientation) {
+	@return map-get($devices, "" + $mode + "-" + $orientation);
+}
+
+//--Lists
+
+@function LIST-GetSubElement($list, $element, $sub-element) {
+	$i-element: 1;
+	@each $list_element in $list {
+		@if ($i-element == $element) {
+			@return nth($list_element, $sub-element);
+		}
+		$i-element: $i-element + 1;
+	}
+}
+
+@function LIST-MAP_GetSubMin-name($list, $name) {
+	$LIST-result: ();
+	@each $list_element in $list {
+		@if map-get($list_element, $name) != null {
+			$LIST-result: append($LIST-result, map-get($list_element, $name));
+		}
+	}
+	$result: LIST_GetMin($LIST-result);
+	@return $result;
+}
+
+@function LIST-GetMax($list) {
+	$max: nth($list, 1);
+	@for $indexer from 1 through length($list) {
+		@if $max < nth($list, $indexer) {
+			$max: nth($list, $indexer);
+		}
+	}
+	@return $max;
+}
+
+@function LIST-GetMin($list) {
+	$min: nth($list, 1);
+	@for $indexer from 1 through length($list) {
+		@if $min > nth($list, $indexer) {
+			$min: nth($list, $indexer);
+		}
+	}
+	@return $min;
+}
+
+@function LIST-GetMaxIndex($list) {
+	$max: nth($list, 1);
+	$max-index: 1;
+	@for $indexer from 1 through length($list) {
+		@if $max < nth($list, $indexer) {
+			$max: nth($list, $indexer);
+			$max-index: $indexer;
+		}
+	}
+	@return $max-index;
+}
+
+@function LIST-GetMinIndex($list) {
+	$min: nth($list, 1);
+	$min-index: 1;
+	@for $indexer from 1 through length($list) {
+		@if $min > nth($list, $indexer) {
+			$min: nth($list, $indexer);
+			$min-index: $indexer;
+		}
+	}
+	@return $min-index;
+}
+
+@function LIST-CheckInclude($list, $element) {
+	$result: false;
+	@each $list_element in $list {
+		@if $list_element == $element {
+			$result: true;
+		}
+	}
+	@return $result;
+}

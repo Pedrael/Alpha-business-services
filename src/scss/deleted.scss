@@ -1,0 +1,88 @@
+//		width: calc(#{$scaler * $width/$big_desktop} * 100vw + #{(1 - $scaler) * $width/1080} * 100vmin);
+
+//@mixin SetWidth-responsive ($width, $min-width: 0, $mode: _desktop-middle) {
+//	$phone-small: 360;//galaxy note 3 (360 x 640)
+//	$phone-big: 414;//iphone XR (414 x 896)
+//	$tablet-small: 600;//nexus 7 (600 x 960)
+//	$tablet-middle: 768;//ipad 768 x 1024
+//	$tablet-big: 1024;//ipad 1024 x 768
+//	$desktop-small: 1366;//1366 x 900
+//	$desktop-middle: 1920;//1920 x 1080
+//
+//	@if($mode == _phone-small) {
+//		width: calc(#{($width - $min-width)/$phone-small} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _phone-big) {
+//		width: calc(#{($width - $min-width)/$phone-big} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _tablet-small) {
+//		width: calc(#{($width - $min-width)/$tablet-small} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _tablet-middle) {
+//		width: calc(#{($width - $min-width)/$tablet-middle} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _tablet-big) {
+//		width: calc(#{($width - $min-width)/$tablet-big} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _desktop-small) {
+//		width: calc(#{($width - $min-width)/$desktop-small} * 100vw + #{$min-width * 1px});
+//	}
+//	@else if ($mode == _desktop-middle) {
+//		width: calc(#{($width - $min-width)/$desktop-middle} * 100vw + #{$min-width * 1px});
+//	}
+//}
+
+$map: ("first" 500px 1 4) ("second" 200px 2 3 5 6) ("third" 100px 7 8 9)
+
+/*
+
+@debug $list_rows;
+@debug $indexer-row;
+@debug nth($list_rows, $indexer-row);
+@debug $current_row-areas;
+@debug $indexer-area;
+@debug length($current_row-areas);
+@debug nth($current_row-areas, $indexer-area);
+
+
+        @if($control_sum > $width) {
+          @debug "you are idiot";
+        }
+        @else {
+
+          @if(GetSubElementList($list_areas, $i_2, $sub-index) != $temp) {
+            $control_sum = $control_sum + GetSubElementList($list_areas, $i_2, $sub-index);
+          }
+
+          $temp: GetSubElementList($list_areas, $i_2, $sub-index);
+        }
+
+@while nth($map_element, $sub-index)!=null {
+
+  grid-template-columns: repeat($count_columns, 1fr);
+  grid-template-rows: auto;
+  $a1: "first";
+  $a2: "second";
+  $a3: "third";
+
+  $first: '"first second second"';
+  $second: '"first second second"';
+  $third: '"third third third"';
+  $var: $first + $second + $third;
+  @debug $var;
+
+  $first2: $a1 + " " + $a2 + " " + $a2;
+  @debug Shit($first2);
+
+  grid-template-areas:
+    #{$var};
+    */
+
+//padding-top: calc(#{$scaler * $up/$phone-small} * 100vh + #{(1 - $scaler) * $up * 1px});
+//padding-bottom: calc(#{$scaler * $down}/$phone-small} * 100vh + #{(1 - $scaler) * $down * 1px});
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: auto;
+grid-template-areas:
+  "first first first"
+  "first second second"
+  "third third third";
