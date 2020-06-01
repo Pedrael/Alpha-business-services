@@ -1,0 +1,15 @@
+.teaser {
+  width: 100%;
+  min-height: 100vh;
+  background: $black;
+  position: relative;
+  .content {
+    .img-wrap {
+      @include width(222, 0.8);
+    }
+    .title {
+      h2 { color: $accent-1-color; }
+      h3 { }
+    }
+  }
+}
