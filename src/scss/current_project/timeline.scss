@@ -1,0 +1,101 @@
+$timeline-scaler: 0.5;
+.timeline {
+  min-height: RelativeUnits(900, 0.5);
+  background: #ebebeb;
+  .timeline-body {
+    display: grid;
+    grid-template-rows:
+    RelativeUnits(82, $timeline-scaler)
+    RelativeUnits(200, $timeline-scaler) 2px RelativeUnits(220, $timeline-scaler);
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas:
+    'icon1 icon2 icon3 icon4 icon5'
+    'dots1 dots2 dots3 dots4 dots5'
+    'line1 line2 line3 line4 line5'
+    'text1 text2 text3 text4 text5';
+    justify-content: space-between;
+    @include width(1300, 0.8);
+    max-width: 100vw;
+    @include _tablet-middle {
+      grid-template-areas:
+      'icon1 dots1 line1 text1'
+      'icon2 dots2 line2 text2'
+      'icon3 dots3 line3 text3'
+      'icon4 dots4 line4 text4'
+      'icon5 dots5 line5 text5';
+      grid-template-columns: RelativeUnits(82, $timeline-scaler)
+      RelativeUnits(200, $timeline-scaler) 2px RelativeUnits(320, $timeline-scaler);
+      grid-template-rows: RelativeUnits(164, $timeline-scaler)
+      RelativeUnits(164, $timeline-scaler)
+      RelativeUnits(164, $timeline-scaler)
+      RelativeUnits(164, $timeline-scaler)
+      RelativeUnits(164, $timeline-scaler);
+      justify-content: center;
+    }
+
+    .icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: RelativeUnits(82, $timeline-scaler);
+      height: RelativeUnits(82, $timeline-scaler);
+      border-radius: RelativeUnits(5, $timeline-scaler);
+      background: $article-color;
+      i {
+        color: $accent-1-color;
+        font-size: RelativeUnits(27, $timeline-scaler);
+      }
+      @include _tablet-middle {
+        align-self: center;
+        justify-self: center;
+      }
+    }
+
+    .dots {
+      border: 1px dashed #000000;
+      height: RelativeUnits(100, $timeline-scaler);
+      @include _tablet-middle {
+        height: 1px;
+        width: RelativeUnits(100, $timeline-scaler);
+      }
+    }
+    .line {
+      width: 100%;
+      border: 2px solid #35384B;
+      opacity: 0.05;
+      @include _tablet-middle {
+        height: 100%;
+        width: 2px;
+      }
+    }
+    .text-segment {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: RelativeUnits(50, $timeline-scaler);
+      .square {
+        width: RelativeUnits(12, $timeline-scaler);
+        height: RelativeUnits(12, $timeline-scaler);
+        background: $article-color;
+        margin-bottom: 20px;
+      }
+      p {
+        width: 80%;
+      }
+      @include _tablet-middle {
+        padding: 0;
+        align-self: center;
+        .square { display: none; }
+      }
+    }
+
+    @for $i from 1 to 6 {
+      .icon#{$i} { grid-area: icon#{$i}; justify-self: center; }
+      .dots#{$i} { grid-area: dots#{$i}; justify-self: center; align-self: center; }
+      .line#{$i} { grid-area: line#{$i}; justify-self: center; align-self: center; }
+      .text#{$i} { grid-area: text#{$i}; justify-self: center; }
+    }
+
+  }
+}

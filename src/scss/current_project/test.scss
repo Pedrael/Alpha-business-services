@@ -19,15 +19,39 @@ html, body {
 				list-style: none;
 			}
       p {
-        @include FontLineSize(0.1, 0.1, 0.8, 16, 10);
+        @include FontLineSize(0.2, 0.2, 0.6, 16, 0);
+				line-height: normal;
 				font-weight: 500;
       }
       h2 {
-        @include FontLineSize(0.2, 0.2, 0.6, 60, 8);
+        @include FontLineSize(0.4, 0.4, 0.2, 60, 0);
 				font-weight: 500;
       }
       h3 {
-        @include FontLineSize(0.2, 0.2, 0.6, 30, 8);
+        @include FontLineSize(0.37, 0.37, 0.26, 30, 0);
 				font-weight: 500;
       }
+			h4 {
+				@include FontLineSize(0.3, 0.3, 0.4, 24, 8);
+        font-weight: 700;
+      }
+}
+
+.custom-button {
+	@include FontLineSize(0.2, 0.2, 0.6, 16, 8);
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: RelativeUnits(221, 0.3);
+	min-height: RelativeUnits(56, 0.3);
+	border-radius: RelativeUnits(20, 0.3);
+	border: 1px solid $accent-1-subcolor;
+	font-weight: 500;
+	color: $accent-1-subcolor;
+	&:hover {
+		background: $accent-1-color;
+		color: $article-color;
+		border: 1px solid $accent-1-color;
+	}
 }

@@ -1,0 +1,35 @@
+.we-all-you-need {
+  .black-square {
+    width: 16px;
+    height: 16px;
+    background: $article-color;
+    margin-top: RelativeUnits(140, 1);
+  }
+  .title {
+    margin-top: RelativeUnits(50, 0.5);
+  }
+  .items-list {
+    @include width(1060, 0.7);
+    max-width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: RelativeUnits(150, 1);
+
+    .item {
+      @include width(216, 0.5);
+      min-width: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px auto;
+      padding: 0 15px;
+      i {
+        color: $accent-1-color;
+        @include FontLineSize(0.45, 0.45, 0.1, 131, 8);
+        margin-bottom: RelativeUnits(20, 0.5);
+      }
+      p { text-align: center; }
+    }
+  }
+}

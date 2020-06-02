@@ -3,13 +3,68 @@
   min-height: 100vh;
   background: $black;
   position: relative;
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    left: calc(50% - 8px);
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    background: $background-color;
+  }
   .content {
     .img-wrap {
       @include width(222, 0.8);
+      margin-bottom: RelativeUnits(80, 0.5);
     }
     .title {
-      h2 { color: $accent-1-color; }
-      h3 { }
+      h2 { color: $accent-1-color; @include FontLineSize(0.4, 0.4, 0.2, 50, 8); }
+      .title-img-wrap {
+        @include width(77, 0.8);
+        margin-left: RelativeUnits(20, 0.5);
+        margin-bottom: RelativeUnits(-9, 0.99);
+        display: flex;
+        align-items: center;
+      }
     }
+    .list {
+      align-self: flex-start;
+      margin-top: RelativeUnits(22, 0.5);
+      .line {
+        display: flex;
+        align-items: center;
+        margin: RelativeUnits(8, 0.5) 0;
+        padding-left: RelativeUnits(34, 0.5);
+        .square {
+          width: 8px;
+          height: 8px;
+          background: $accent-2-color;
+          margin-right: RelativeUnits(24, 0.5);
+        }
+        p {
+          color: $accent-1-subcolor;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .custom-button {
+      margin-top: RelativeUnits(60, 0.5);
+    }
+  }
+
+  .left-el, .right-el {
+    position: absolute;
+  }
+  .left-el {
+    @include width(165, 0.8);
+    top: 20%;
+    left: 10%;
+  }
+  .right-el {
+    @include width(226, 0.8);
+    top: 35%;
+    right: 5%;
   }
 }
