@@ -1,0 +1,85 @@
+.service-body {
+  padding-bottom: RelativeUnits(250, 1);
+  .subtitle { opacity: 0.5; }
+  .content { max-width: 80vw; }
+  p { font-weight: 400; }
+  h4 { text-transform: uppercase; }
+  .purple-square, .green-square {
+    width: 8px;
+    height: 8px;
+  }
+  .purple-square { background: $accent-1-color; }
+  .green-square { background: $accent-2-color; }
+  .title {
+    margin-top: RelativeUnits(230, 1);
+    margin-bottom: RelativeUnits(140, 1);
+  }
+  .text-body {
+    @include width(900, 0.7);
+    max-width: 80vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .left-text, .right-text {
+      min-width: 300px;
+      //margin: 0 auto;
+      h4 { margin-bottom: 10px; }
+      p { line-height: 180%; }
+    }
+    .left-text {
+      width: 40%;
+    }
+    .right-text {
+      .list {
+        display: grid;
+        margin-top: RelativeUnits(30, 0.5);
+        grid-template-columns: 8px auto;
+        align-items: center;
+        grid-auto-rows: RelativeUnits(30, 0.5);
+        padding-left: RelativeUnits(25, 0.5);
+        p {
+          margin-left: RelativeUnits(25, 0.5);
+        }
+      }
+    }
+
+    @include _tablet-big {
+      .left-text, .right-text {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .price-body {
+    margin-top: RelativeUnits(90, 0.7);
+
+    .price-list {
+      margin-top: RelativeUnits(20, 0.5);
+      margin-left: RelativeUnits(-110, 0.5);
+      display: grid;
+      grid-template-columns: min-content RelativeUnits(75, 0.5) 8px auto;
+      grid-auto-rows: minmax(RelativeUnits(40, 0.0), auto);
+      align-items: center;
+      h4 {
+        color: $accent-2-color;
+        font-weight: 400;
+      }
+      .dots {
+        @include width(30, 0.5);
+        border: 1px dashed #35384B;
+        height: 1px;
+        justify-self: center;
+      }
+      p { margin-left: RelativeUnits(30, 0.5); }
+      p { line-height: 180%; }
+      @include _tablet-big {
+        width: 100%;
+        margin-left: 0;
+      }
+      @include _phone-big {
+        //grid-auto-rows: RelativeUnits(60, 0.0);
+        grid-row-gap: 10px;
+      }
+    }
+  }
+}

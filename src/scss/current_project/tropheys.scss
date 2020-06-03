@@ -1,0 +1,52 @@
+.tropheys {
+  .subtitle {
+    opacity: 0.5;
+  }
+  .rectangles-wrap {
+    @include width(63, 0.5);
+    margin-top: RelativeUnits(30, 0.5);
+    margin-bottom: RelativeUnits(80, 0.8);
+  }
+  .tropheys-list {
+    margin-top: RelativeUnits(200, 1);
+    .trophey-item {
+      background: $article-color;
+      padding: RelativeUnits(35, 0.5);
+      border-radius: RelativeUnits(10, 0.5);
+      display: grid;
+      grid-template-areas: 'gem h4' '. p' '. facecheck';
+      column-gap: RelativeUnits(18, 0.5);
+      row-gap: RelativeUnits(18, 0.5);
+      @include width(550, 0.5);
+      align-items: center;
+      max-width: 80vw;
+      .gem {
+        width: RelativeUnits(18, 0.5);
+        height: RelativeUnits(18, 0.5);
+        grid-area: gem;
+      }
+      h4 {
+        grid-area: h4;
+        color: $accent-1-color;
+      }
+      p {
+        color: $background-color;
+        grid-area: p;
+        font-weight: 400;
+      }
+      .facecheck {
+        grid-area: facecheck;
+        @include FontLineSize(0.2, 0.2, 0.6, 20, 0);
+        color: $accent-1-color;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        i {
+          color: $accent-1-color;
+          @include FontLineSize(0.2, 0.2, 0.6, 26, 0);
+          margin-right: RelativeUnits(20, 0.5);
+        }
+      }
+    }
+  }
+}
