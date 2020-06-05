@@ -1,6 +1,8 @@
 .tropheys {
   .subtitle {
     opacity: 0.5;
+    max-width: 80vw;
+    text-align: center;
   }
   .rectangles-wrap {
     @include width(63, 0.5);
@@ -9,7 +11,9 @@
   }
   .tropheys-list {
     margin-top: RelativeUnits(200, 1);
+    @include width(1700, 1);
     .trophey-item {
+      margin: 0 auto;
       background: $article-color;
       padding: RelativeUnits(35, 0.5);
       border-radius: RelativeUnits(10, 0.5);

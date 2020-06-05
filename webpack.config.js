@@ -3,6 +3,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs')
+const webpack = require('webpack')
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -72,6 +73,11 @@ module.exports = {
     new ExtractTextPlugin({
       filename: './css/style.bundle.css',
       allChunks: true,
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new CopyWebpackPlugin([{
         from: './src/fonts',
