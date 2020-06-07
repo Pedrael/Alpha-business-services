@@ -22,6 +22,7 @@ html, body {
         @include FontLineSize(0.2, 0.2, 0.6, 16, 0);
 				line-height: normal;
 				font-weight: 500;
+				line-height: 150%;
       }
       h2 {
         @include FontLineSize(0.4, 0.4, 0.2, 60, 0);
@@ -34,6 +35,7 @@ html, body {
 			h4 {
 				@include FontLineSize(0.3, 0.3, 0.4, 24, 8);
         font-weight: 700;
+				padding-bottom: RelativeUnits(10, 0.3);
       }
 }
 

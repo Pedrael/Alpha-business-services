@@ -1,0 +1,176 @@
+.contact-section {
+	background: url(../img/contact.png) no-repeat;
+	background-size: cover;
+	background-position: center top;
+	min-height: 100vh;
+	padding-top: RelativeUnits(300, 0.5, desktop-middle, horizontal);
+
+	.title {
+		text-align: center;
+		h2, h3, i {
+			letter-spacing: 2px;
+			color: $h1-color;
+			margin: 0;
+		}
+		h2 {
+			color: #8B8FFF;
+		}
+		h3 {
+			@include FontLineSize(0.3, 0.3, 0.4, 30, 8);
+			white-space: nowrap;
+		}
+	}
+
+	.gem {
+		margin-top: RelativeUnits(50, 0.5, desktop-middle, horizontal);
+		margin-bottom: RelativeUnits(50, 0.5, desktop-middle, horizontal);
+	}
+
+	.custom-button {
+		width: RelativeUnits(220, 0.5, desktop-middle, horizontal);
+		background: transparent;
+		margin-top: RelativeUnits(150, 0.5, desktop-middle, horizontal);
+		align-self: center;
+		border: 1px solid $black;
+	}
+
+	.callback-form-custom {
+		@include width(500, 0.5);
+		max-width: 60vw;
+
+		.button {
+			align-self: center;
+			margin-top: RelativeUnits(100, 0.5, desktop-middle, horizontal);
+			margin-bottom: RelativeUnits(150, 0.5, desktop-middle, horizontal);
+		}
+		input, textarea, select {
+			border: none;
+			resize: none;
+		}
+		input {
+			display: flex;
+		}
+
+		input, textarea, select, .check-box {
+			font-weight: 500;
+			@include FontLineSize(0.1, 0.1, 0.8, 16, 8);
+			color: $accent-1-color;
+			background: transparent;
+			padding: 10px 0px;
+			letter-spacing: 1px;
+			width: 100%;
+		}
+		input, textarea {
+			border-bottom: 2px solid #8B8FFF;
+
+		}
+		textarea::placeholder, input::placeholder {
+			color: $h1-color;
+		}
+
+		select {
+			background-image: none;
+			-webkit-appearance: none;
+			padding: 8px 10px;
+		}
+		input[type=checkbox] {
+			width: 50px;
+			border-radius: 50%;
+			border: none;
+			margin-right: 10px;
+		}
+		.check-box {
+			background: $transparent;
+			a, a:visited {
+				color: #5D648A;
+				text-decoration: underline;
+			}
+		}
+
+		.file-box {
+			flex-wrap: wrap;
+			position: relative;
+
+			input[type=file] {
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				position: absolute;
+				z-index: -10;
+			}
+			input[type=date] {
+				//left: RelativeUnits(80, 0.5, desktop-middle, horizontal);
+			}
+			label {
+				@include FontLineSize(0.2, 0.2, 0.6, 30, 8);
+				color: $h2-color;
+				background: $black;
+				border-radius: 20px;
+				width: RelativeUnits(60, 0.5, desktop-middle, horizontal);
+				height: RelativeUnits(60, 0.5, desktop-middle, horizontal);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			@include _tablet-big {
+				input[type=date] {
+					//right: 10%;
+					//left: auto;
+				}
+				label, .clock {
+					//width: 40%; //if needed file
+					//width: 100%;
+				}
+				select {
+					//width: 100%;
+					//margin-top: RelativeUnits(20, 0.5, desktop-middle, horizontal);
+				}
+			}
+		}
+
+		.input-box {
+			margin-bottom: RelativeUnits(20, 0.5, desktop-middle, horizontal);
+
+			i {
+				color: $h1-color;
+				@include FontLineSize(0.2, 0.2, 0.6, 36, 8);
+				margin-left: RelativeUnits(30, 0.5, desktop-middle, horizontal);
+				margin-right: RelativeUnits(-65, 0.5, desktop-middle, horizontal);
+			}
+		}
+	}
+	.social-networks {
+		a:visited {
+			color: $h1-color;
+		}
+		padding-top: RelativeUnits(150, 0.3, desktop-middle, horizontal);
+		padding-bottom: RelativeUnits(127, 0.3, desktop-middle, horizontal);
+		@include width(301, 0.5);
+		color: $h1-color;
+		a {
+			color: $h1-color;
+		}
+		:hover {
+			color: $accent-1-color;
+		}
+		i {
+			cursor: pointer;
+			@include FontLineSize(0.2, 0.2, 0.6, 40, 8);
+		}
+	}
+}
+.submit-message {
+	position: fixed;
+	right: 0;
+	top: 33%;
+	padding: 20px 30px;
+	@include FontLineSize(0.2, 0.2, 0.6, 18, 8);
+	font-weight: 600;
+	background: $accent-1-color;
+	color: $article-color;
+	z-index: 9999999;
+	border-radius: 30px 0  0 30px;
+	transition: 0;
+	//display: none;
+}

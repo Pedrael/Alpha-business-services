@@ -17,7 +17,7 @@ $(document).ready(function() {
         1200: {
             items: 2
         },
-        1900: {
+        1880: {
             items: 3
         }
     }

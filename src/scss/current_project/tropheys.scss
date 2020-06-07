@@ -1,4 +1,5 @@
 .tropheys {
+  padding-bottom: RelativeUnits(245, 0.8);
   .subtitle {
     opacity: 0.5;
     max-width: 80vw;
@@ -21,7 +22,7 @@
       grid-template-areas: 'gem h4' '. p' '. facecheck';
       column-gap: RelativeUnits(18, 0.5);
       row-gap: RelativeUnits(18, 0.5);
-      @include width(550, 0.5);
+      @include width(545, 0.6);
       align-items: center;
       max-width: 80vw;
       .gem {

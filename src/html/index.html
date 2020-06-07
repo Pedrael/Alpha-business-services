@@ -288,6 +288,87 @@
         </div>
       </div>
     </section>
+
+    <section id="contact" class="contact-section flex -column -ai-c">
+
+      <div class="title flex -column" id="to-contact">
+        <div class="flex -ai-c">
+        </div>
+        <h2>ОБРАТИТЕСЬ К НАМ</h2>
+        <h3>наша коллегия вас легко успокоит</h3>
+      </div>
+
+      <div class="gem">
+        <img src="img/contact icon.png" alt="">
+      </div>
+
+      <form class="callback-form-custom flex -column"
+      id="mailform" method="POST" enctype="multipart/form-data">
+        <!-- Hidden Required Fields -->
+          <input type="hidden" name="project_name" value="Site Name">
+          <input type="hidden" name="admin_email" value="denielolivo982@gmail.com">
+          <input type="hidden" name="form_subject" value="Form Subject">
+          <!-- END Hidden Required Fields -->
+
+          <div class="input-box flex -ai-c">
+            <textarea rows="5" name="text" required="required" name="message" placeholder="Опишите Вашу проблему"></textarea>
+          </div>
+
+          <!-- <div class="input-box flex  a-i-center">
+            <input type="email" id="email" name="email" required="required" placeholder="Введите ваш E-mail">
+            <i class="fas fa-envelope-square"></i>
+          </div> -->
+
+          <div class="input-box flex  a-i-center">
+            <input type="text" id="name" name="name" required="required" placeholder="Как Вас зовут?">
+          </div>
+
+          <div class="input-box flex  a-i-center">
+            <input type="tel" id="phone" name="phone" required="required" placeholder="Введите ваш телефон">
+          </div>
+
+          <!-- <div class="input-box flex  a-i-center">
+            <input type="date" id="date" min="2000-01-01" name="date">
+            <i class="fas fa-calendar-alt"></i>
+          </div> -->
+
+          <!-- <div class="input-box flex  a-i-center">
+            <input type="time" id="time" min="09:30" max="18:30" name="time">
+            <i class="fas fa-clock"></i>
+          </div> -->
+
+          <!-- <div class="input-box flex  a-i-center">
+            <select class="" name="selected">
+              <option value="all" disabled selected>Выберите способ консультации</option>
+      				<option value="по телефону">по телефону</option>
+              <option value="Telegram">Telegram</option>
+              <option value="Whatsapp">Whatsapp</option>
+            </select>
+          </div> -->
+
+          <div class="input-box flex -ai-c check-box">
+            <input type="checkbox" name="checkbox" required="required">
+            <label for="checkbox"><a href="img/СОГЛАСИЕ.pdf" target="_blank">Я даю согласие на обработку своих персональных данных</a></label>
+          </div>
+
+        <button type="submit" class="custom-button">Oтправить</button>
+
+      </form>
+
+      <div class="social-networks flex -jc-sa">
+        <a href="https://www.instagram.com/mo.lab.tech/?igshid=1pnw162y9dgbk"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/MO_lab"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://www.facebook.com/Molab-102993117891121/?ref=bookmarks"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/43317095"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </section>
+
+
+    <div class="submit-wrap">
+      <div class="submit-message">
+        Сообщение отправлено!
+      </div>
+    </div>
   </body>
 
   <script src="js/bundle.js"></script>
