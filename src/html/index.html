@@ -13,6 +13,8 @@
   </head>
   <body>
 
+    <div id="vue">
+
     <header class="header menu-hidden" id="header">
       <div class="header-always black-strip">
         <h4>alpha business consulting</h4><h4 class="dash">-</h4>
@@ -20,15 +22,11 @@
       </div>
       <div class="header-popup">
         <div class="categories-list owl-carousel" id="header-carousel">
-          <div class="category-array">
-            <h4>Название категории 1</h4>
-            <a href="">sed do eiusmod</a>
-            <a href="">sed do eiusmod tewtydfftu</a>
-            <a href="">jfggffggf sed do eiusmod</a>
-            <a href="">sed do hgkgkhgjhgkjhghjgk eiusmod</a>
-            <a href="">sed do hjg eiusmod</a>
+          <div class="category-array" v-for="cat in header_items">
+            <h4>{{cat.category}}</h4>
+            <a :href="'index.html?id='+i.id+'#to-service'" v-for="i in cat.list">{{i.name}}</a>
           </div>
-          <div class="category-array">
+          <!-- <div class="category-array">
             <h4>Название категории 2</h4>
             <a href="">sed do eiusmod</a>
             <a href="">sed do eiusmod tewtydfftu</a>
@@ -51,7 +49,7 @@
             <a href="">jfggffggf sed do eiusmod</a>
             <a href="">sed do hgkgkhgjhgkjhghjgk eiusmod</a>
             <a href="">sed do hjg eiusmod</a>
-          </div>
+          </div> -->
         </div>
         <div class="black-strip select-it">
           <h4>выбирайте нужную категорию</h4>
@@ -101,7 +99,7 @@
             <p>несем полную ответственность за результат</p>
           </div>
         </div>
-        <a href="" class="custom-button">интересно</a>
+        <a href="#to-contact" class="custom-button">интересно</a>
       </div>
     </section>
 
@@ -211,27 +209,33 @@
       </div>
     </section>
 
-    <section class="service-body flex -column -ai-c">
+    <section class="service-body flex -column -ai-c" id="to-service">
       <div class="content">
         <div class="title">
-          <h2>Уголовное дело кошака</h2>
-          <p class="subtitle">кошак украл у хозяйки огурец, испугался и уронил его в унитаз, ведь он боится огурцов</p>
+          <h2>{{service.title}}</h2>
+          <p class="subtitle">{{service.subtitle}}</p>
         </div>
 
         <div class="text-body flex">
           <div class="left-text">
             <h4>Что это такое?</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <p>{{service.content}}</p>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
           </div>
           <div class="right-text">
             <h4>А что мне за это будет?</h4>
             <div class="list">
+              <template v-for="item in service.features">
+                <div class="green-square"></div>
+                <p>{{item}}</p>
+              </template>
+
+              <!-- <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
               <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
               <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
               <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
               <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
-              <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
-              <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p>
+              <div class="green-square"></div><p>Lorem ipsum dolor sit amet, consectetur </p> -->
             </div>
           </div>
         </div>
@@ -240,14 +244,20 @@
           <h4>Наверняка, вас волнует вопрос - “За что я, собственно, плачу?”</h4>
           <p class="subtitle">для вас мы перечислим за что именно и сколько вы платите, для вашего спокойствия</p>
           <div class="price-list">
-            <h4>100$</h4>
+            <template v-for="item in service.prices">
+              <h4>{{item.price}}</h4>
+              <div class="dots"></div>
+              <div class="purple-square"></div>
+              <p>{{item.comment}}</p>
+            </template>
+            <!-- <h4>100$</h4>
             <div class="dots"></div>
             <div class="purple-square"></div>
             <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
             <h4>200$</h4>
             <div class="dots"></div>
             <div class="purple-square"></div>
-            <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+            <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </p> -->
           </div>
         </div>
 
@@ -265,18 +275,18 @@
 
       <div class="item">
         <div class="icon-wrap">
-          <i class="fas fa-users"></i>
+          <i class="fas fa-thumbs-up"></i>
         </div>
-        <h2>835</h2>
-        <p>клиентов обслужено</p>
+        <h2>259</h2>
+        <p>дел выиграно</p>
       </div>
 
       <div class="item">
         <div class="icon-wrap">
-          <i class="fas fa-users"></i>
+          <i class="fas fa-calendar-minus"></i>
         </div>
-        <h2>835</h2>
-        <p>клиентов обслужено</p>
+        <h2>2549</h2>
+        <p>дней работы коллегии</p>
       </div>
     </section>
 
@@ -289,60 +299,12 @@
       <p class="subtitle">кошак украл у хозяйки огурец, испугался и уронил его в унитаз, ведь он боится огурцов</p>
 
       <div class="tropheys-list owl-carousel" id="tropheys-carousel">
-        <div class="trophey-item">
+        <div class="trophey-item" v-for="item in tropheys">
           <div class="gem">
             <img src="img/gem.svg" alt="">
           </div>
-          <h4>УГОЛОВНЫЕ ДЕЛА 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoad minimut labore et dolore </p>
-          <div class="facecheck">
-            <i class="fas fa-check-square"></i>
-            дело выиграно
-          </div>
-        </div>
-
-        <div class="trophey-item">
-          <div class="gem">
-            <img src="img/gem.svg" alt="">
-          </div>
-          <h4>УГОЛОВНЫЕ ДЕЛА 2</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoad minimut labore et dolore </p>
-          <div class="facecheck">
-            <i class="fas fa-check-square"></i>
-            дело выиграно
-          </div>
-        </div>
-
-        <div class="trophey-item">
-          <div class="gem">
-            <img src="img/gem.svg" alt="">
-          </div>
-          <h4>УГОЛОВНЫЕ ДЕЛА 3</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoad minimut labore et dolore </p>
-          <div class="facecheck">
-            <i class="fas fa-check-square"></i>
-            дело выиграно
-          </div>
-        </div>
-
-        <div class="trophey-item">
-          <div class="gem">
-            <img src="img/gem.svg" alt="">
-          </div>
-          <h4>УГОЛОВНЫЕ ДЕЛА 4</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoad minimut labore et dolore </p>
-          <div class="facecheck">
-            <i class="fas fa-check-square"></i>
-            дело выиграно
-          </div>
-        </div>
-
-        <div class="trophey-item">
-          <div class="gem">
-            <img src="img/gem.svg" alt="">
-          </div>
-          <h4>УГОЛОВНЫЕ ДЕЛА 5</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoad minimut labore et dolore </p>
+          <h4>{{item.name}}</h4>
+          <p>{{item.text}}</p>
           <div class="facecheck">
             <i class="fas fa-check-square"></i>
             дело выиграно
@@ -431,6 +393,9 @@
         Сообщение отправлено!
       </div>
     </div> -->
+
+    </div>
+
   </body>
 
   <script src="js/bundle.js"></script>
