@@ -1,4 +1,5 @@
 .we-all-you-need {
+  position: relative;
   .black-square {
     width: 16px;
     height: 16px;
@@ -31,5 +32,12 @@
       }
       p { text-align: center; }
     }
+  }
+
+  .squares-wrap {
+    position: absolute;
+    bottom: RelativeUnits(-10, 0.7);
+    right: 8%;
+    width: RelativeUnits(59, 0.7);
   }
 }

@@ -1,5 +1,6 @@
 $timeline-scaler: 0.5;
 .timeline {
+  position: relative;
   min-height: RelativeUnits(900, 0.5);
   background: #ebebeb;
   .timeline-body {
@@ -97,5 +98,19 @@ $timeline-scaler: 0.5;
       .text#{$i} { grid-area: text#{$i}; justify-self: center; }
     }
 
+  }
+
+  .left-rectangles-wrap, .right-cross-wrap {
+    position: absolute;
+  }
+  .left-rectangles-wrap {
+    @include width(87, 0.7);
+    left: 10%;
+    bottom: RelativeUnits(-45, 0.7);
+  }
+  .right-cross-wrap {
+    @include width(102, 0.7);
+    right: 35%;
+    bottom: RelativeUnits(-19, 0.7);
   }
 }
