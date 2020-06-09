@@ -39,9 +39,10 @@ export default function App() {
             }
           }
 
-          console.log(uniqueCategories, this.header_items)
-
-          this.createOwlCarousel()
+          //console.log(uniqueCategories, this.header_items)
+          Vue.nextTick(() => {
+            this.createOwlCarousel()
+          })
 
         })
       },
