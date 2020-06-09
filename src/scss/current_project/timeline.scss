@@ -102,6 +102,7 @@ $timeline-scaler: 0.5;
 
   .left-rectangles-wrap, .right-cross-wrap {
     position: absolute;
+    z-index: 3;
   }
   .left-rectangles-wrap {
     @include width(87, 0.7);
