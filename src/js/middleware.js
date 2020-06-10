@@ -101,7 +101,8 @@ export default function App() {
           })
 
           var header = document.getElementById('header')
-          header.addEventListener('click', () => {
+          var toggleMenu = document.getElementById('toggle-menu')
+          toggleMenu.addEventListener('click', () => {
             header.classList.toggle('menu-hidden')
           })
         },

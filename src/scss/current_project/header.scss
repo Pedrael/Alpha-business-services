@@ -23,6 +23,21 @@
   .header-always {
     z-index: 1;
     position: relative;
+    justify-content: space-between;
+    padding: 0 RelativeUnits(50, 0.5);
+    .header-icon {
+      @include FontLineSize(0.4, 0.4, 0.2, 20, 0);
+      color: $accent-2-color;
+      padding: 0 10px;
+      i {
+        line-height: 0;
+      }
+    }
+    .header-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     h4 {
       @include FontLineSize(0.4, 0.4, 0.2, 20, 0);
       color: $accent-1-subcolor;

@@ -19,7 +19,7 @@
       padding: RelativeUnits(35, 0.5);
       border-radius: RelativeUnits(10, 0.5);
       display: grid;
-      grid-template-areas: 'gem h4' '. p' '. facecheck';
+      grid-template-areas: 'gem h4 clip' '. p p' '.  facecheck facecheck';
       column-gap: RelativeUnits(18, 0.5);
       row-gap: RelativeUnits(18, 0.5);
       @include width(545, 0.6);
@@ -29,6 +29,14 @@
         width: RelativeUnits(18, 0.5);
         height: RelativeUnits(18, 0.5);
         grid-area: gem;
+      }
+      .paperclip {
+        grid-area: clip;
+        justify-self: flex-end;
+        i {
+          color: $accent-2-color;
+          font-size: RelativeUnits(25, 0.5);
+        }
       }
       h4 {
         grid-area: h4;

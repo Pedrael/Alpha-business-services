@@ -17,8 +17,16 @@
 
     <header class="header menu-hidden" id="header">
       <div class="header-always black-strip">
-        <h4>alpha business consulting</h4><h4 class="dash">-</h4>
-        <h4 class="green-bg">уголовное дело кошака</h4>
+        <div class="flex">
+          <a href="../index.html"><i class="fas fa-home header-icon"></i></a>
+          <a href="#to-footer" id="list"><i class="fas fa-phone header-icon"></i></a>
+        </div>
+        <div class="header-text">
+          <h4>Alpha Business Consulting</h4><h4 class="dash">-</h4>
+          <h4 class="green-bg">{{service.title}}</h4>
+        </div>
+        <i class="fas fa-align-right header-icon" id="toggle-menu"></i>
+
       </div>
       <div class="header-popup">
         <div class="categories-list owl-carousel" id="header-carousel">
@@ -191,7 +199,7 @@
           <div class="text-segment text1">
             <div class="square"></div>
             <h4>Первый шаг</h4>
-            <p>Сформулируйте свою задачу или проблему</p>
+            <p>Расскажите о своей задаче или проблеме</p>
           </div>
 
           <div class="icon-wrap icon2">
@@ -202,7 +210,7 @@
           <div class="text-segment text2">
             <div class="square"></div>
             <h4>Второй шаг</h4>
-            <p>Заполните форму внизу текущей страницы</p>
+            <p>Мы оценим перспективы дела и стоимость работы</p>
           </div>
 
           <div class="icon-wrap icon3">
@@ -213,7 +221,7 @@
           <div class="text-segment text3">
             <div class="square"></div>
             <h4>Третий шаг</h4>
-            <p>Дождитесь сообщения о том, что заявка принята</p>
+            <p>Заключаем соглашение и фиксируем цену</p>
           </div>
 
           <div class="icon-wrap icon4">
@@ -224,7 +232,7 @@
           <div class="text-segment text4">
             <div class="square"></div>
             <h4>Четвертый шаг</h4>
-            <p>При необходимости мы уточним детали</p>
+            <p>Приступаем к работе и держим Вас в курсе событий</p>
           </div>
 
           <div class="icon-wrap icon5">
@@ -235,7 +243,7 @@
           <div class="text-segment text5">
             <div class="square"></div>
             <h4>Пятый шаг</h4>
-            <p>Перезвоним и расскажем вам обо всем интересном</p>
+            <p>Доводим дело до результата</p>
           </div>
 
       </div>
@@ -262,7 +270,7 @@
         <div class="icon-wrap">
           <i class="fas fa-thumbs-up"></i>
         </div>
-        <h2>259</h2>
+        <h2>749</h2>
         <p>дел выиграно</p>
       </div>
 
@@ -270,7 +278,7 @@
         <div class="icon-wrap">
           <i class="fas fa-calendar-minus"></i>
         </div>
-        <h2>2549</h2>
+        <h2>31500</h2>
         <p>дней работы коллегии</p>
       </div>
     </section>
@@ -280,14 +288,15 @@
         <img src="img/rectangles.svg" alt="">
       </div>
 
-      <h2>Стена наших трофеев</h2>
-      <p class="subtitle">кошак украл у хозяйки огурец, испугался и уронил его в унитаз, ведь он боится огурцов</p>
+      <h2>Наши победы</h2>
+      <p class="subtitle">здесь можно посмотреть информацию о делах, которые сопровождали наши адвокаты</p>
 
       <div class="tropheys-list owl-carousel" id="tropheys-carousel">
         <div class="trophey-item" v-for="item in tropheys">
           <div class="gem">
             <img src="img/gem.svg" alt="">
           </div>
+          <a :href="item.href" target="_blank" class="paperclip"><i class="fas fa-paperclip"></i></a>
           <h4>{{item.name}}</h4>
           <p>{{item.text}}</p>
           <div class="facecheck">
@@ -304,7 +313,7 @@
         <div class="flex -ai-c">
         </div>
         <h2>ОБРАТИТЕСЬ К НАМ</h2>
-        <h3>наша коллегия вас легко успокоит</h3>
+        <h3>мы всегда на связи</h3>
       </div>
 
       <div class="gem">
@@ -364,12 +373,12 @@
 
       </form>
 
-      <div class="social-networks flex -jc-sa">
+      <!-- <div class="social-networks flex -jc-sa">
         <a href="https://www.instagram.com/mo.lab.tech/?igshid=1pnw162y9dgbk"><i class="fab fa-instagram"></i></a>
         <a href="https://t.me/MO_lab"><i class="fab fa-telegram-plane"></i></a>
         <a href="https://www.facebook.com/Molab-102993117891121/?ref=bookmarks"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.linkedin.com/company/43317095"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+      </div> -->
     </section>
 
 
@@ -378,6 +387,27 @@
         Сообщение отправлено!
       </div>
     </div>
+
+    <footer class="flex -ai-c -jc-sa" id="to-footer">
+
+      <div class="flex -ai-c -column">
+        <div class="flex cloud -column -ai-c">
+          <i class="fas fa-cloud"></i>
+          <p>Мы работаем так, как вам удобно: <br> лично и дистанционно</p>
+        </div>
+        <p>+7 812 317 71 67</p>
+        <p>+7 995 987 26 93</p>
+        <p>Адрес: г. Санкт-Петербург, пр-т Медиков, д. 10 корп. 7 оф. 5 <br> 10 минут от м. Петроградская</p>
+        <p class="gray">ИНН 4253044454 ОГРН 1194200000048</p>
+
+        <div class="flex social -jc-sa">
+          <a href="https://t.me/legal_abc"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://wa.me/79959872693"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/legal.abc/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </footer>
 
     </div>
 

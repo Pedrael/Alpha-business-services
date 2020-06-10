@@ -30,6 +30,7 @@
     padding: RelativeUnits(100, 1) 0;
     .item {
       margin: RelativeUnits(60, 0.5) 0;
+      grid-template-columns: auto 40vw;
     }
   }
 

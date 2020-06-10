@@ -57,3 +57,30 @@ html, body {
 		border: 1px solid $accent-1-color;
 	}
 }
+
+footer {
+	background: #1f1f20;
+	height: 450px;
+	p {
+		color: $background-color;
+		max-width: 500px;
+		text-align: center;
+	}
+	.gray {
+		opacity: 0.3;
+	}
+	.social {
+		margin-top: 50px;
+		width: 200px;
+	}
+	.cloud {
+		margin-bottom: 30px;
+	}
+	i {
+		color: $background-color;
+		@include FontLineSize(0.1, 0.1, 0.8, 32, 10);
+		&:hover {
+			color: $accent-2-color;
+		}
+	}
+}
