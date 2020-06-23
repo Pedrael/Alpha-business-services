@@ -94,6 +94,11 @@
         </div>
         <a href="#to-contact" class="custom-button" id="list">интересно</a>
       </div>
+      <div class="arrows">
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+        <i class="fas fa-chevron-down"></i>
+      </div>
     </section>
 
     <section class="service-body flex -column -ai-c" id="to-service">
@@ -106,7 +111,7 @@
         <div class="text-body flex">
           <div class="left-text">
             <h4>Описание услуги</h4>
-            <p>{{service.content}}</p>
+            <p v-html="service.content"></p>
             <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
           </div>
           <div class="right-text">
@@ -129,7 +134,7 @@
 
         <div class="price-body">
           <h4>Наверняка вас волнует вопрос: «А за что я, собственно, плачу?</h4>
-          <p class="subtitle">здесь приведена примерная стоимость наших услуг</p>
+          <p class="subtitle">Здесь приведена примерная стоимость наших услуг</p>
           <div class="price-list">
             <template v-for="item in service.prices">
               <h4>{{item.price}}</h4>
@@ -398,6 +403,8 @@
         <p>+7 812 317 71 67</p>
         <p>+7 995 987 26 93</p>
         <p>Адрес: г. Санкт-Петербург, пр-т Медиков, д. 10 корп. 7 оф. 5 <br> 10 минут от м. Петроградская</p>
+        <p>г. Новокузнецк, ул. Димитрова, д. 34, корп. 1, оф. 5</p>
+        <p>г. Кемерово, ул. Весенняя, д. 24, оф. 112</p>
         <p class="gray">ИНН 4253044454 ОГРН 1194200000048</p>
 
         <div class="flex social -jc-sa">

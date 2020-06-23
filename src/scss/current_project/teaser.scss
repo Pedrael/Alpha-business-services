@@ -3,16 +3,16 @@
   min-height: 100vh;
   background: $black;
   position: relative;
-  &:after {
-    display: block;
-    content: '';
-    position: absolute;
-    left: calc(50% - 8px);
-    bottom: 0;
-    width: 16px;
-    height: 16px;
-    background: $background-color;
-  }
+  // &:after {
+  //   display: block;
+  //   content: '';
+  //   position: absolute;
+  //   left: calc(50% - 8px);
+  //   bottom: 0;
+  //   width: 16px;
+  //   height: 16px;
+  //   background: $background-color;
+  // }
   .content {
     .img-wrap {
       @include width(222, 0.8);
@@ -54,7 +54,7 @@
     }
   }
 
-  .left-el, .right-el {
+  .left-el, .right-el, .arrows {
     position: absolute;
   }
   .left-el {
@@ -66,5 +66,17 @@
     @include width(226, 0.8);
     top: 35%;
     right: 5%;
+  }
+  .arrows {
+    bottom: 0;
+    align-self: center;
+    flex-direction: column;
+    display: flex;
+    padding-bottom: RelativeUnits(16, 0.5);
+    i {
+      font-size: RelativeUnits(16, 0.5);
+      color: $accent-2-color;
+      margin-top: RelativeUnits(-5, 0.5);
+    }
   }
 }
